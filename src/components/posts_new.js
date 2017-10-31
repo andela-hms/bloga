@@ -10,6 +10,7 @@ class PostsNew extends Component {
                     type="text"
                     {...field.input}
                 />
+                { field.meta.error }
             </div>
         )
     }
@@ -45,10 +46,6 @@ function validate(values) {
     // validate inputs from values object
     if ( !values.title ) {
         errors.title = "Enter a title";
-    }
-
-    if ( values.title.length <= 3 ) {
-        errors.title = "Title should be atleast 3 xcters long";
     }
 
     if ( !values.categories ) {
