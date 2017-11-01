@@ -24,7 +24,9 @@ class PostsNew extends Component {
     }
 
     onSubmit (values) {
-        this.props.createPost(values);
+        this.props.createPost(values, () => {
+            this.props.history.push("/");
+        });
     }
 
     render() {
@@ -42,13 +44,13 @@ class PostsNew extends Component {
                 <Field
                     label="Categories"                
                     name="categories"
-                    component={this.renderField}
+                    component={ this.renderField }
                 />
 
                 <Field 
                     label="Post Content"
                     name="content"
-                    component={this.renderField}
+                    component={ this.renderField }
                 />
 
                 <button type="submit" className="btn btn-primary">Submit</button>
