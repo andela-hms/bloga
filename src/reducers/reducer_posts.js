@@ -12,6 +12,7 @@ export default function(state={}, action) {
             // return newState;
 
         // ES6
+        // key interpolation 
             return { ...state, [action.payload.data.id]: action.payload.data }
 
         case FETCH_POSTS:
